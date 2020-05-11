@@ -79,9 +79,9 @@ function acquireR(version, rtoolsVersion) {
                     acquireRWindows(version),
                     acquireRtools(rtoolsVersion)
                 ]);
-                if (core.getInput("qpdf")) {
-                  yield acquireQpdfWindows();
-                }
+                // if (core.getInput("qpdf")) {
+                //   yield acquireQpdfWindows();
+                // }
             }
             else if (IS_MAC) {
                 yield Promise.all([
