@@ -19,6 +19,10 @@ inputs:
     flags, e.g. `SHLIB_OPENMP_CFLAGS`, as the macOS Command Line Tools do not
     support OpenMP'
     default: true
+  qpdf:
+    description: 'If true, install `qpdf` so that check --as-cran can build
+    the package manual.'
+    default: true
 runs:
   using: 'node12'
   main: 'lib/setup-r.js'

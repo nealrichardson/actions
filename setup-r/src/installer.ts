@@ -58,9 +58,11 @@ async function acquireR(version: string, rtoolsVersion: string) {
     if (IS_WINDOWS) {
       await Promise.all([
         acquireRWindows(version),
-        acquireRtools(rtoolsVersion),
-        acquireQpdfWindows()
+        acquireRtools(rtoolsVersion)
       ]);
+      if (core.getInput("qpdf")) {
+        await acquireQpdfWindows();
+      }
     } else if (IS_MAC) {
       await Promise.all([
         acquireFortranMacOS(),
